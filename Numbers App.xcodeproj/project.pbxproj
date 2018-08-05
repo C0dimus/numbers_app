@@ -19,7 +19,9 @@
 		0460E5522115F3DA00838306 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460E5512115F3DA00838306 /* MasterViewModel.swift */; };
 		0460E5542116458F00838306 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460E5532116458F00838306 /* DetailViewModel.swift */; };
 		0460E5572116EE2C00838306 /* UIColor+customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460E5562116EE2C00838306 /* UIColor+customColors.swift */; };
-		0460E5592117156E00838306 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460E5582117156E00838306 /* ContainerViewController.swift */; };
+		0460E5592117156E00838306 /* NASplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460E5582117156E00838306 /* NASplitViewController.swift */; };
+		0460E57E211777D100838306 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0460E580211777D100838306 /* Localizable.strings */; };
+		0460E5832117791800838306 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460E5822117791800838306 /* String+localized.swift */; };
 		E82FF86458937F8469E60646 /* Pods_Numbers_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D64F672EE931B2AA5C818 /* Pods_Numbers_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +40,10 @@
 		0460E5512115F3DA00838306 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		0460E5532116458F00838306 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		0460E5562116EE2C00838306 /* UIColor+customColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+customColors.swift"; sourceTree = "<group>"; };
-		0460E5582117156E00838306 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		0460E5582117156E00838306 /* NASplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASplitViewController.swift; sourceTree = "<group>"; };
+		0460E57F211777D100838306 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0460E581211777D700838306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0460E5822117791800838306 /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		E41D64F672EE931B2AA5C818 /* Pods_Numbers_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Numbers_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E885BD7B418B3A7F5F8348A3 /* Pods-Numbers App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numbers App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Numbers App/Pods-Numbers App.debug.xcconfig"; sourceTree = "<group>"; };
 		F72D254BB9C944D4717CE350 /* Pods-Numbers App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numbers App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Numbers App/Pods-Numbers App.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 				0438984F2115A155007A6FE2 /* Assets.xcassets */,
 				043898512115A155007A6FE2 /* LaunchScreen.storyboard */,
 				043898542115A155007A6FE2 /* Info.plist */,
+				0460E580211777D100838306 /* Localizable.strings */,
 			);
 			path = "Numbers App";
 			sourceTree = "<group>";
@@ -94,7 +100,7 @@
 		0438985A2115B19E007A6FE2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0460E5582117156E00838306 /* ContainerViewController.swift */,
+				0460E5582117156E00838306 /* NASplitViewController.swift */,
 				043898482115A155007A6FE2 /* MasterViewController.swift */,
 				0438984A2115A155007A6FE2 /* DetailViewController.swift */,
 			);
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				0460E5562116EE2C00838306 /* UIColor+customColors.swift */,
+				0460E5822117791800838306 /* String+localized.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0460E57E211777D100838306 /* Localizable.strings in Resources */,
 				0460E54F2115ECB600838306 /* NAModelCell.xib in Resources */,
 				043898532115A155007A6FE2 /* LaunchScreen.storyboard in Resources */,
 				043898502115A155007A6FE2 /* Assets.xcassets in Resources */,
@@ -284,12 +292,13 @@
 			files = (
 				0460E54A2115EAD500838306 /* NAModel.swift in Sources */,
 				0438984B2115A155007A6FE2 /* DetailViewController.swift in Sources */,
+				0460E5832117791800838306 /* String+localized.swift in Sources */,
 				0460E5572116EE2C00838306 /* UIColor+customColors.swift in Sources */,
 				0460E5542116458F00838306 /* DetailViewModel.swift in Sources */,
 				0460E54E2115ECB600838306 /* NAModelCell.swift in Sources */,
 				043898492115A155007A6FE2 /* MasterViewController.swift in Sources */,
 				0460E5522115F3DA00838306 /* MasterViewModel.swift in Sources */,
-				0460E5592117156E00838306 /* ContainerViewController.swift in Sources */,
+				0460E5592117156E00838306 /* NASplitViewController.swift in Sources */,
 				043898472115A155007A6FE2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +320,15 @@
 				043898522115A155007A6FE2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0460E580211777D100838306 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0460E57F211777D100838306 /* en */,
+				0460E581211777D700838306 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -12,7 +12,9 @@ class MasterViewController: UITableViewController {
     private var masterViewModel: MasterViewModel!
     private var selectedRow = 0
     private var detailVC: DetailViewController? {
-        let detailNavigationController =  self.splitViewController?.viewControllers.last as? UINavigationController
+        let splitVC = self.parent?.parent as! NASplitViewController
+        let splitChildren = splitVC.childViewControllers
+        let detailNavigationController = splitChildren.last as? UINavigationController
         return detailNavigationController?.topViewController as? DetailViewController
     }
     
@@ -41,7 +43,7 @@ class MasterViewController: UITableViewController {
         let previousSelectedIndexPath = IndexPath(row: selectedRow, section: 0)
         selectedRow = indexPath.row
         tableView.reloadRows(at: [previousSelectedIndexPath, indexPath], with: .none)
-        if UIDevice.current.orientation.isPortrait {
+        if NASplitViewController.shouldSplitViewControllers {
             performSegue(withIdentifier: "MasterToDetailSegue", sender: nil)
         }
         detailVC?.model = masterViewModel.models[selectedRow]
@@ -49,10 +51,8 @@ class MasterViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MasterToDetailSegue" {
-            let detailNC = segue.destination as! UINavigationController
-            let detailVC = detailNC.topViewController as! DetailViewController
+            let detailVC = segue.destination as! DetailViewController
             detailVC.model = masterViewModel.models[selectedRow]
-//            self.detailVC = detailVC
         }
     }
 
@@ -65,12 +65,14 @@ extension MasterViewController: MasterViewModelDelegate {
     }
     
     func onModelsUpdateFail() {
-        let alert = UIAlertController(title: "Error", message: "Unable to download data. Try again.", preferredStyle: .alert)
-        let retryAction = UIAlertAction(title: "Retry", style: .default) { (alert) in
+        let alert = UIAlertController(title: "Error".localized, message: "DownloadDataError".localized, preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Retry".localized, style: .default) { (alert) in
             self.masterViewModel.sendModelsRequest()
         }
         alert.addAction(retryAction)
-        present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
 }

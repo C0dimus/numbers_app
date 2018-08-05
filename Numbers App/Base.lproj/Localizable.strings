@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Numbers App
+
+  Created by Mac on 8/5/18.
+  Copyright © 2018 C0dimus. All rights reserved.
+*/
+
+"Error" = "Error";
+"DownloadDataError" = "Unable to download data. Try again.";
+"Retry" = "Retry";

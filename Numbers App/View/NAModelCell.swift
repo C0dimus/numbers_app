@@ -16,21 +16,6 @@ class NAModelCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        self.backgroundColor = UIColor.white
-//    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if isSelected {
             return
@@ -56,15 +41,5 @@ class NAModelCell: UITableViewCell {
         nameLabel.text = model.name
         cellImageView.sd_setImage(with: URL(string: model.image), completed: nil)
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.backgroundColor = UIColor.blue
-//        super.touchesBegan(touches, with: event)
-//    }
-//
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesEnded(touches, with: event)
-//        self.backgroundColor = UIColor.white
-//    }
     
 }
