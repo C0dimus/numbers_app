@@ -1,5 +1,5 @@
 # Numbers App
-App is displaying chinise numbers with their's symbols and names. 
+App is displaying chinese numbers with their's symbols and names. 
 
 ### Instalation 
 1. App was created in Xcode 9.2 with usage of Swift 4.0
